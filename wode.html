@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="js/mui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+	</head>
+
+	<body>
+		<div id="wode">
+			<div class="mui-content">
+				<div id="head">
+					<img src="images/userimg.jpg" id="img">
+					<div class="nickname" id="name1">
+						Effort
+					</div>
+					<div class="number" id="iid">
+						ID 17857058385
+					</div>
+
+				</div>
+				<div id="centre">
+					<div class="mes">
+						<div class="money">
+							<div>0</div>
+							<div>文物收藏</div>
+						</div>
+						<div class="basic-score">
+							<div>0</div>
+							<div>文章收藏</div>
+						</div>
+						<div class="score">
+							<div>0</div>
+							<div>旅游收藏</div>
+						</div>
+					</div>
+					<img class="invent-img" src="images/invent.jpg">
+					<div class="list">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell " id="duyuelishi">
+								<span class="iconfont icon-icon-p_lishibaobiao"></span> 读阅历史
+							</li>
+							<li class="mui-table-view-cell">
+								<span class="iconfont icon-huodong"></span> 活动中心
+							</li>
+							<li class="mui-table-view-cell " id="lishiliulan">
+								<span class="iconfont icon-207"></span> 历史浏览
+							</li>
+
+						</ul>
+						<ul class="mui-table-view" style="margin-top: 1.5px;">
+							<li class="mui-table-view-cell " id="qingkonghuancun">
+								<span class="iconfont icon-qingchuhuancun"></span> 清空缓存
+							</li>
+							<li class="mui-table-view-cell" id="jianchagengxin">
+								<span class="iconfont icon-banbengengxin"></span> 检查更新
+							</li>
+							<li class="mui-table-view-cell " id="guanyuwm">
+								<span class="iconfont icon-bangzhuguanyuwomen"></span> 关于我们
+							</li>
+						</ul>
+					</div>
+
+					<div class="button">
+						<div class="problem">
+							<span class="iconfont icon-changjianwenti"></span>
+							<div>常见问题</div>
+						</div>
+						<div class="feedback">
+							<span class="iconfont icon-yijianfankui"></span>
+							<div>意见反馈</div>
+						</div>
+						<div class="content">
+							<span class="iconfont icon-kefu"></span>
+							<div>电话客服</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/castapp.js"></script>
+		<script type="text/javascript" src="js/mui.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript">
+			
+			var qingkonghuancun = document.getElementById('qingkonghuancun');
+			var jianchagengxin = document.getElementById('jianchagengxin');
+			var duyuelishi = document.getElementById('duyuelishi');
+			var guanyuwm = document.getElementById('guanyuwm');
+			var problem = document.getElementsByClassName('problem');
+			var feedback = document.getElementsByClassName('feedback');
+			var content = document.getElementsByClassName('content');
+			var guanyuwm = document.getElementById('guanyuwm');
+			qingkonghuancun.addEventListener('tap',function(){
+				mui.toast('缓存已清理');
+			});
+			jianchagengxin.addEventListener('tap',function(){
+				mui.toast('当前已是最新版');
+			});
+			duyuelishi.addEventListener('tap',function(){
+				mui.openWindow({
+					url: 'detail.html',
+					id: 'detail'
+				})
+			});
+			guanyuwm.addEventListener('tap',function(){
+				mui.openWindow({
+					url: 'guanyuwomen.html',
+					id: 'guanyuwomen'
+				})
+			});
+			problem[0].addEventListener('tap',function(){
+				mui.openWindow({
+					url: 'changjianwenti.html',
+					id: 'changjianwenti'
+				})
+			});
+			feedback[0].addEventListener('tap',function(){
+				mui.openWindow({
+					url: 'feedback.html',
+					id: 'feedback'
+				})
+			});
+			content[0].addEventListener('tap', function() {
+				var btnArray = ['拨打', '取消'];
+				mui.confirm('40082000820  ', '联系客服', btnArray, function(e) {
+					if(e.index == 0) {
+						window.location.href = 'tel:40082000820'; //拨打客服电话
+					} else {
+						mui.toast('取消拨打');
+					}
+				})
+			})
+			
+		</script>
+	</body>
+
+</html>
